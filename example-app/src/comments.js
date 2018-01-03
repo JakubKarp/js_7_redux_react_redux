@@ -1,4 +1,6 @@
 import {ADD_COMMENT} from './actions'
+import {THUMB_UP_COMMENT} from './actions'
+
 
 function comments(state = [], action) {
     switch(action.type) {
@@ -8,7 +10,14 @@ function comments(state = [], action) {
                 text: action.text,
                 votes: 0
                 }
-        , ...state];
+            , ...state];
+        case THUMB_UP_COMMENT:
+            return state.map(comment => {
+                if(comment.id === action.id) {
+                return {...comment, votes: comment.votes + 1}
+                }
+            return comment;
+            });
         default:
             return state;
     }
