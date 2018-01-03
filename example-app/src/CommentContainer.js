@@ -7,5 +7,5 @@ const mapDispatchToProps = dispatch => ({
     thumbUpComment: (id) => dispatch(thumbUpComment(id))
 });
 
-
+    
 export default connect(null, mapDispatchToProps)(Comment);  
