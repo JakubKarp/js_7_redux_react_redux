@@ -1,6 +1,4 @@
-import {ADD_COMMENT} from './actions'
-import {THUMB_UP_COMMENT} from './actions'
-
+import {ADD_COMMENT, THUMB_UP_COMMENT} from '../actions/actions';
 
 function comments(state = [], action) {
     switch(action.type) {
